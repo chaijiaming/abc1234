@@ -20,6 +20,7 @@ def name():
 
 def valid_name(first_name, last_name):
     connection = sql.connect('database.db')
+    connection.execute('CREATE TABLE IF NOT EXISTS users(firstname TEXT, lastname TEXT);')
     connection.execute('INSERT INTO users (firstname, lastname) VALUES (?,?);', (first_name, last_name))
     connection.commit()
     cursor = connection.execute('SELECT * FROM users;')
