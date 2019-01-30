@@ -9,19 +9,19 @@
 
     <h2>Print Name</h2>
     <form action="{{url}}" method="POST">
-      <label for="firstname">First Name</label>
-      <input type="text" name="firstname" required>
+      <label for="FirstName">First Name</label>
+      <input type="text" name="FirstName" required>
 
-      <label for="lastname">Last Name</label>
-      <input type="text" name="lastname" required>
+      <label for="LastName">Last Name</label>
+      <input type="text" name="LastName" required>
 
       <button type="submit">Insert</button>
     </form>
     <h2>History</h2>
     <table border = 1>
       <tr>
-         <th> First Name </th>
-         <td> Last Name </td>
+         <td> First Name </td>
+         <th> Last Name </th>
       </tr>
          {% for key, value in result %}
             <tr>
@@ -31,4 +31,4 @@
          {% endfor %}
       </table>
   </body>
-</html></html>
+</html>

@@ -10,7 +10,7 @@ host = 'http://127.0.0.1:5000/'
 def name():
     error = None
     if request.method == 'POST':
-        result = valid_name(request.form['firstname'], request.form['lastname'])
+        result = valid_name(request.form['FirstName'], request.form['LastName'])
         if result:
             return render_template('input.html', error=error, url=host, result=result)
         else:
@@ -18,9 +18,9 @@ def name():
     return render_template('input.html', error=error, url=host)
 
 
-def valid_name(firstname, lastname):
+def valid_name(first_name, last_name):
     connection = sql.connect('database.db')
-    connection.execute('INSERT INTO users (firstname, lastname) VALUES (?,?);', (firstname, lastname))
+    connection.execute('INSERT INTO users (firstname, lastname) VALUES (?,?);', (first_name, last_name))
     connection.commit()
     cursor = connection.execute('SELECT * FROM users;')
     return cursor.fetchall()
