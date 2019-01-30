@@ -14,7 +14,7 @@ def name():
         if result:
             return render_template('input.html', error=error, url=host, result=result)
         else:
-            error = 'invalid user input'
+            error = 'invalid input name'
     return render_template('input.html', error=error, url=host)
 
 
