@@ -23,10 +23,10 @@
          <td> First Name </td>
          <th> Last Name </th>
       </tr>
-         {% for key, value in result %}
+         {% for first_name, last_name in result %}
             <tr>
-               <td> {{ key }} </td>
-               <th> {{ value }} </th>
+               <td> {{ first_name }} </td>
+               <th> {{ last_name }} </th>
             </tr>
          {% endfor %}
       </table>
